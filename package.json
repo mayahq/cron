@@ -1,0 +1,79 @@
+{
+	"name": "@mayahq/cron",
+	"description": "⏲️ Cron Quartz and Cron UNIX expression parser",
+	"version": "0.1.0",
+	"author": {
+		"email": "hello@vangware.com",
+		"name": "Vangware",
+		"url": "https://vangware.com"
+	},
+	"bugs": "https://github.com/vangware/cron/issues",
+	"dependencies": {
+		"@vangware/utils": "^8.0.2"
+	},
+	"devDependencies": {
+		"@arkweid/lefthook": "^0.7.7",
+		"@swc/core": "^1.2.135",
+		"@types/eslint": "^8.2.1",
+		"@types/node": "17.0.8",
+		"@types/prettier": "^2.4.2",
+		"@typescript-eslint/eslint-plugin": "^5.9.0",
+		"@typescript-eslint/parser": "^5.9.0",
+		"@vangware/configs": "^1.0.12",
+		"@vangware/test": "^8.0.3",
+		"c8": "^7.11.0",
+		"eslint": "^8.6.0",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-import-resolver-node": "^0.3.6",
+		"eslint-plugin-ban": "^1.6.0",
+		"eslint-plugin-functional": "^4.0.2",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-no-null": "^1.0.2",
+		"eslint-plugin-prefer-arrow": "^1.2.3",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.5.1",
+		"rimraf": "^3.0.2",
+		"ts-node": "^10.4.0",
+		"tsup": "^5.11.13",
+		"typedoc": "^0.22.10",
+		"typescript": "^4.5.4"
+	},
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"files": [
+		"dist"
+	],
+	"homepage": "https://cron.vangware.com",
+	"keywords": [
+		"cron",
+		"deno",
+		"parse",
+		"parser",
+		"typescript"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vangware/cron.git"
+	},
+	"scripts": {
+		"clean": "rimraf ./dist",
+		"compile": "tsc --project tsconfig.dist.json",
+		"prepack": "tsup",
+		"document": "typedoc",
+		"lint": "eslint {src,tests}/**/*.ts",
+		"lint:fix": "eslint {src,tests}/**/*.ts --fix",
+		"pre-compile": "tsc --noemit --project tsconfig.dist.json",
+		"prepublishOnly": "run-s compile prettify",
+		"prettify": "prettier --write --loglevel warn './dist/**/*.{js,ts}'",
+		"test": "NODE_OPTIONS='--loader ts-node/esm' c8 test",
+		"tsup": "tsup"
+	},
+	"source": "./src/index.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts"
+}
