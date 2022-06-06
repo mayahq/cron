@@ -1,10 +1,5 @@
-<img alt="Vangware's Cron" src="./logo.svg" height="192" />
-
-![Build Status][build-status-badge]
-![Coverage][coverage-badge]
-![License][license-badge]
-![NPM Version][npm-version-badge]
-![Open Issues][open-issues-badge]
+## @mayahq/cron
+Fork of [https://github.com/vangware/cron](https://github.com/vangware/cron) for targetting es5 bundles.
 
 ⏲️ Cron Quartz and Cron UNIX expression parser.
 
